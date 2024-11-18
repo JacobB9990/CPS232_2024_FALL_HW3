@@ -1,0 +1,1 @@
+1. (35 pts) Given an array of the size `n`, find the `kth` smallest element in the array, where `k ≤ n`. Please design an algorithm as efficient as possible, and please analyze the running time. (Hint: Better than `O(n log n)`)

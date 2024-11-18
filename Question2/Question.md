@@ -1,0 +1,1 @@
+2. (35 pts) Given `k` sorted lists, please design an algorithm as efficient as possible to merge these sorted list into a single sorted list. The total number of elements in all given lists is `n`. And please analyze the running time of your algorithm. (Hint: Better than `O(n log n)`)
