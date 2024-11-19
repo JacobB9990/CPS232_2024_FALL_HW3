@@ -1,1 +1,8 @@
-1. (35 pts) Given an array of the size `n`, find the `kth` smallest element in the array, where `k ≤ n`. Please design an algorithm as efficient as possible, and please analyze the running time. (Hint: Better than `O(n log n)`)
+#### Question
+1. (35 pts) Given an array of the size `n`, find the `k-th` smallest element in the array, where `k ≤ n`. Please design an algorithm as efficient as possible, and please analyze the running time. (Hint: Better than `O(n log n)`)
+
+#### Answer
+- Trying to beat `n log n` is challenging, but it is possible. While there are a few algorithms that can achieve better performance than `n log n` under certain conditions, but the one we will choose is QuickSelect which is basically QuickSort minus the sorting part. By focusing only on finding the `k-th` smallest element we avoid the overhead of sorting the entire array, which saves valuable time. The code is not too complex as we simply partition are arry around a pivot element and recursively focus on the portion of the array that contains the `k-th` element. This process allows us to skip the unnecessary sorting of elements that are not relevant, making QuickSelect an efficient choice for this task. While QuickSelect's average time complexity is `O(n)`, it avoids the worst-case behavior of `O(n^2)` by using randomized pivot selection, making it both faster and more reliable for most use cases. 
+
+##### Why `O(n)` and not `O(n log n)`
+- This is the avg case and sometimes you can perform worse, but we are dividing our array into subarrays. This will look like `O(n)` for first call, `O(n/2)` for the second, `O(n/4)` for third, and so forth. If we sume these together we get: `O(n) + O(n/2) + O(n/4)+ ...` This is a pretty obvious series. So, instead we can write this as `O(n) * (1 + 1/2 + 1/4 + ...) = O(n) * 2 = O(n)`. The 2 is just constant and not relevant to time complexity. Since `O(n) < O(n log n)` we know `O(n)` is faster.
